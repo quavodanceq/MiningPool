@@ -15,6 +15,12 @@
 		64CD364D2D3BC8A0008F44BD /* CryptoPoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD364C2D3BC8A0008F44BD /* CryptoPoolTests.swift */; };
 		64CD36572D3BC8A0008F44BD /* CryptoPoolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD36562D3BC8A0008F44BD /* CryptoPoolUITests.swift */; };
 		64CD36592D3BC8A0008F44BD /* CryptoPoolUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD36582D3BC8A0008F44BD /* CryptoPoolUITestsLaunchTests.swift */; };
+		64CD36672D3BCBAE008F44BD /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD36662D3BCBAE008F44BD /* MainDataManager.swift */; };
+		64CD366A2D3BCC0C008F44BD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD36692D3BCC0C008F44BD /* MainView.swift */; };
+		64CD366C2D3BCC56008F44BD /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD366B2D3BCC56008F44BD /* MainPresenter.swift */; };
+		64CD366E2D3BCCEE008F44BD /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD366D2D3BCCEE008F44BD /* MainModuleBuilder.swift */; };
+		64CD36712D3BD52B008F44BD /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD36702D3BD52B008F44BD /* MainTopView.swift */; };
+		64F57AC42D3C2093007373EC /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F57AC32D3C2092007373EC /* UIColor + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		64CD36522D3BC8A0008F44BD /* CryptoPoolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoPoolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64CD36562D3BC8A0008F44BD /* CryptoPoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPoolUITests.swift; sourceTree = "<group>"; };
 		64CD36582D3BC8A0008F44BD /* CryptoPoolUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPoolUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		64CD36662D3BCBAE008F44BD /* MainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
+		64CD36692D3BCC0C008F44BD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		64CD366B2D3BCC56008F44BD /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		64CD366D2D3BCCEE008F44BD /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
+		64CD36702D3BD52B008F44BD /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopView.swift; sourceTree = "<group>"; };
+		64F57AC32D3C2092007373EC /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,9 @@
 				64CD36352D3BC89E008F44BD /* AppDelegate.swift */,
 				64CD36372D3BC89E008F44BD /* SceneDelegate.swift */,
 				64CD36392D3BC89E008F44BD /* ViewController.swift */,
+				64CD36652D3BCB70008F44BD /* MainModule */,
+				64CD366F2D3BD50C008F44BD /* Views */,
+				64F57AC22D3C207A007373EC /* Extensions */,
 				64CD363E2D3BC8A0008F44BD /* Assets.xcassets */,
 				64CD36402D3BC8A0008F44BD /* LaunchScreen.storyboard */,
 				64CD36432D3BC8A0008F44BD /* Info.plist */,
@@ -122,6 +137,33 @@
 				64CD36582D3BC8A0008F44BD /* CryptoPoolUITestsLaunchTests.swift */,
 			);
 			path = CryptoPoolUITests;
+			sourceTree = "<group>";
+		};
+		64CD36652D3BCB70008F44BD /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				64CD36662D3BCBAE008F44BD /* MainDataManager.swift */,
+				64CD36692D3BCC0C008F44BD /* MainView.swift */,
+				64CD366B2D3BCC56008F44BD /* MainPresenter.swift */,
+				64CD366D2D3BCCEE008F44BD /* MainModuleBuilder.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		64CD366F2D3BD50C008F44BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				64CD36702D3BD52B008F44BD /* MainTopView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		64F57AC22D3C207A007373EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				64F57AC32D3C2092007373EC /* UIColor + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F57AC42D3C2093007373EC /* UIColor + Extension.swift in Sources */,
 				64CD363A2D3BC89E008F44BD /* ViewController.swift in Sources */,
+				64CD366C2D3BCC56008F44BD /* MainPresenter.swift in Sources */,
 				64CD36362D3BC89E008F44BD /* AppDelegate.swift in Sources */,
+				64CD366E2D3BCCEE008F44BD /* MainModuleBuilder.swift in Sources */,
+				64CD36672D3BCBAE008F44BD /* MainDataManager.swift in Sources */,
 				64CD36382D3BC89E008F44BD /* SceneDelegate.swift in Sources */,
+				64CD366A2D3BCC0C008F44BD /* MainView.swift in Sources */,
+				64CD36712D3BD52B008F44BD /* MainTopView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
