@@ -17,6 +17,8 @@ class MainViewController: UIViewController, MainViewProtocol {
 	
 	private let mainTopView = MainTopView()
 	
+	private let infoView = InfoView()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		presenter.viewLoaded()
@@ -33,6 +35,8 @@ class MainViewController: UIViewController, MainViewProtocol {
 	
 	private func setupViews() {
 		mainTopView.translatesAutoresizingMaskIntoConstraints = false
+		infoView.translatesAutoresizingMaskIntoConstraints = false
+		view.addSubview(infoView)
 		view.addSubview(mainTopView)
 		
 	}
@@ -43,7 +47,13 @@ class MainViewController: UIViewController, MainViewProtocol {
 			mainTopView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
 			mainTopView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.06),
 			mainTopView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-			//mainTopView.bottomAnchor.constraint(equalTo: mainTopView.bottomAnchor)
+		])
+		
+		NSLayoutConstraint.activate([
+			infoView.topAnchor.constraint(equalTo: view.topAnchor),
+			infoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			infoView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)
 		])
 	}
 	

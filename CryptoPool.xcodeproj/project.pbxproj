@@ -20,6 +20,8 @@
 		64CD366C2D3BCC56008F44BD /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD366B2D3BCC56008F44BD /* MainPresenter.swift */; };
 		64CD366E2D3BCCEE008F44BD /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD366D2D3BCCEE008F44BD /* MainModuleBuilder.swift */; };
 		64CD36712D3BD52B008F44BD /* MainTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD36702D3BD52B008F44BD /* MainTopView.swift */; };
+		64D8CEF32D3D151400D5BD4C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8CEF22D3D151400D5BD4C /* InfoView.swift */; };
+		64D8CEF72D3D97DB00D5BD4C /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8CEF62D3D97DB00D5BD4C /* ScrollView.swift */; };
 		64F57AC42D3C2093007373EC /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F57AC32D3C2092007373EC /* UIColor + Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		64CD366B2D3BCC56008F44BD /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		64CD366D2D3BCCEE008F44BD /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
 		64CD36702D3BD52B008F44BD /* MainTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopView.swift; sourceTree = "<group>"; };
+		64D8CEF22D3D151400D5BD4C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		64D8CEF62D3D97DB00D5BD4C /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		64F57AC32D3C2092007373EC /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				64CD36702D3BD52B008F44BD /* MainTopView.swift */,
+				64D8CEF22D3D151400D5BD4C /* InfoView.swift */,
+				64D8CEF62D3D97DB00D5BD4C /* ScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F57AC42D3C2093007373EC /* UIColor + Extension.swift in Sources */,
+				64D8CEF72D3D97DB00D5BD4C /* ScrollView.swift in Sources */,
 				64CD363A2D3BC89E008F44BD /* ViewController.swift in Sources */,
 				64CD366C2D3BCC56008F44BD /* MainPresenter.swift in Sources */,
 				64CD36362D3BC89E008F44BD /* AppDelegate.swift in Sources */,
@@ -304,6 +311,7 @@
 				64CD36672D3BCBAE008F44BD /* MainDataManager.swift in Sources */,
 				64CD36382D3BC89E008F44BD /* SceneDelegate.swift in Sources */,
 				64CD366A2D3BCC0C008F44BD /* MainView.swift in Sources */,
+				64D8CEF32D3D151400D5BD4C /* InfoView.swift in Sources */,
 				64CD36712D3BD52B008F44BD /* MainTopView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
