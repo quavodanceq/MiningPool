@@ -27,6 +27,10 @@ class InfoView: UIView {
 	
 	private let minorLabel = UILabel()
 	
+	private let stakedView = StakedView()
+	
+	private let trustedView = TrustedView()
+	
 	private func setupBackground() {
 		background.image = UIImage(named: "mainBG")
 		background.translatesAutoresizingMaskIntoConstraints = false
@@ -59,6 +63,10 @@ class InfoView: UIView {
 		setupMinorLabel()
 		addSubview(autoScrollView)
 		autoScrollView.translatesAutoresizingMaskIntoConstraints = false
+		stakedView.translatesAutoresizingMaskIntoConstraints = false
+		trustedView.translatesAutoresizingMaskIntoConstraints = false
+		addSubview(trustedView)
+		addSubview(stakedView)
 		setupConstraints()
 	}
 	
@@ -83,10 +91,24 @@ class InfoView: UIView {
 		])
 		
 		NSLayoutConstraint.activate([
+			autoScrollView.topAnchor.constraint(equalTo: minorLabel.bottomAnchor, constant: 70),
 			autoScrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
 			autoScrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-			autoScrollView.heightAnchor.constraint(equalToConstant: 50),
-			autoScrollView.bottomAnchor.constraint(equalTo: bottomAnchor)
+			autoScrollView.heightAnchor.constraint(equalToConstant: 50)
+		])
+		
+		NSLayoutConstraint.activate([
+			stakedView.topAnchor.constraint(equalTo: autoScrollView.bottomAnchor, constant: 50),
+			stakedView.leadingAnchor.constraint(equalTo: leadingAnchor),
+			stakedView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1),
+			stakedView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)
+		])
+		
+		NSLayoutConstraint.activate([
+			trustedView.topAnchor.constraint(equalTo: autoScrollView.bottomAnchor, constant: 50),
+			trustedView.trailingAnchor.constraint(equalTo: trailingAnchor),
+			trustedView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1),
+			trustedView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)
 		])
 	}
 	

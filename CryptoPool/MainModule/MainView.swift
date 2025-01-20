@@ -53,7 +53,7 @@ class MainViewController: UIViewController, MainViewProtocol {
 			infoView.topAnchor.constraint(equalTo: view.topAnchor),
 			infoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-			infoView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)
+			infoView.heightAnchor.constraint(equalTo: view.heightAnchor)
 		])
 	}
 	
