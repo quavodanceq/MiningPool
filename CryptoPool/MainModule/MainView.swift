@@ -13,7 +13,12 @@ protocol MainViewProtocol: AnyObject {
 }
 
 class MainViewController: UIViewController, MainViewProtocol {
+	
 	var presenter: MainPresenterProtocol!
+	
+	private let scrollView = UIScrollView()
+	
+	private let contentView = UIView()
 	
 	private let mainTopView = MainTopView()
 	
@@ -22,38 +27,56 @@ class MainViewController: UIViewController, MainViewProtocol {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		presenter.viewLoaded()
-		view.backgroundColor = .green
 		setupViews()
-		setupConstraints()
-	}
-	
-	private func setupNavigationBar() {
-		let view = UIView()
-		view.backgroundColor = .red
-		
 	}
 	
 	private func setupViews() {
+		
+		setupScrollView()
+		setupConstraints()
+	}
+	
+	private func setupScrollView() {
+		view.addSubview(scrollView)
+		scrollView.addSubview(contentView)
+		contentView.addSubview(infoView)
+		contentView.addSubview(mainTopView)
+		scrollView.translatesAutoresizingMaskIntoConstraints = false
+		contentView.translatesAutoresizingMaskIntoConstraints = false
 		mainTopView.translatesAutoresizingMaskIntoConstraints = false
 		infoView.translatesAutoresizingMaskIntoConstraints = false
-		view.addSubview(infoView)
-		view.addSubview(mainTopView)
-		
 	}
 	
 	private func setupConstraints() {
+		
 		NSLayoutConstraint.activate([
-			mainTopView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-			mainTopView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
-			mainTopView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.06),
-			mainTopView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+			scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+			scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+			scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+			scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
 		])
 		
 		NSLayoutConstraint.activate([
-			infoView.topAnchor.constraint(equalTo: view.topAnchor),
-			infoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-			infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-			infoView.heightAnchor.constraint(equalTo: view.heightAnchor)
+			contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+			contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+			contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+			contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+			contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+		])
+
+		NSLayoutConstraint.activate([
+			mainTopView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+			mainTopView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+			mainTopView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8),
+			mainTopView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.06)
+			
+		])
+		
+		NSLayoutConstraint.activate([
+			infoView.topAnchor.constraint(equalTo: contentView.topAnchor),
+			infoView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+			infoView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+			infoView.heightAnchor.constraint(equalToConstant: view.bounds.height)
 		])
 	}
 	

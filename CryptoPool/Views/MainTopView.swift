@@ -68,18 +68,18 @@ class MainTopView: UIView {
 	private func setupConstraints() {
 		NSLayoutConstraint.activate([
 			
-						logo.centerYAnchor.constraint(equalTo: centerYAnchor),
-						logo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-						logo.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6),
-						logo.widthAnchor.constraint(equalTo: logo.heightAnchor, multiplier: 0.6),
+			logo.centerYAnchor.constraint(equalTo: centerYAnchor),
+			logo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+			logo.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6),
+			logo.widthAnchor.constraint(equalTo: logo.heightAnchor, multiplier: 0.6),
 			
-						label.centerYAnchor.constraint(equalTo: centerYAnchor),
-						label.leadingAnchor.constraint(equalTo: logo.trailingAnchor, constant: 10),
+			label.centerYAnchor.constraint(equalTo: centerYAnchor),
+			label.leadingAnchor.constraint(equalTo: logo.trailingAnchor, constant: 10),
 			
-						button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-						button.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
-						button.widthAnchor.constraint(equalTo: button.titleLabel!.widthAnchor, constant: 20),
-						button.centerYAnchor.constraint(equalTo: centerYAnchor)
+			button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+			button.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
+			button.widthAnchor.constraint(equalTo: button.titleLabel!.widthAnchor, constant: 20),
+			button.centerYAnchor.constraint(equalTo: centerYAnchor)
 		])
 	}
 }
