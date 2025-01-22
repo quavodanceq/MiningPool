@@ -24,6 +24,8 @@ class MainViewController: UIViewController, MainViewProtocol {
 	
 	private let infoView = InfoView()
 	
+	private let depositView = DepositView()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		presenter.viewLoaded()
@@ -39,11 +41,16 @@ class MainViewController: UIViewController, MainViewProtocol {
 	private func setupScrollView() {
 		view.addSubview(scrollView)
 		scrollView.addSubview(contentView)
+		scrollView.isScrollEnabled = true
+		scrollView.showsHorizontalScrollIndicator = true
+		scrollView.contentInsetAdjustmentBehavior = .never
 		contentView.addSubview(infoView)
+		contentView.addSubview(depositView)
 		contentView.addSubview(mainTopView)
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
 		contentView.translatesAutoresizingMaskIntoConstraints = false
 		mainTopView.translatesAutoresizingMaskIntoConstraints = false
+		depositView.translatesAutoresizingMaskIntoConstraints = false
 		infoView.translatesAutoresizingMaskIntoConstraints = false
 	}
 	
@@ -76,7 +83,15 @@ class MainViewController: UIViewController, MainViewProtocol {
 			infoView.topAnchor.constraint(equalTo: contentView.topAnchor),
 			infoView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
 			infoView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-			infoView.heightAnchor.constraint(equalToConstant: view.bounds.height)
+			infoView.heightAnchor.constraint(equalToConstant: view.frame.height)
+		])
+		
+		NSLayoutConstraint.activate([
+			depositView.topAnchor.constraint(equalTo: infoView.bottomAnchor),
+			depositView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+			depositView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+			depositView.heightAnchor.constraint(equalToConstant: view.frame.height),
+			depositView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
 		])
 	}
 	
